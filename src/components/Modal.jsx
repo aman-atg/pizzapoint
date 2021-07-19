@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
@@ -24,15 +23,9 @@ const nextVariants = {
   },
 };
 
-const Modal = ({ showModal, setShowModal }) => {
-  useEffect(() => {
-    return () => {
-      setShowModal(false);
-    };
-  }, [setShowModal]);
-
+const Modal = ({ showModal }) => {
   return (
-    <AnimatePresence>
+    <AnimatePresence exitBeforeEnter>
       {showModal && (
         <motion.div
           className="backdrop"

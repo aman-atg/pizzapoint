@@ -31,12 +31,16 @@ function App() {
   useEffect(() => {
     if (location.pathname === "/order") {
       setTimeout(() => setIsOpen(true), 1000);
+    } else {
+      setIsOpen(false);
     }
   }, [location]);
 
   return (
     <>
       <Header />
+
+      <Modal showModal={isOpen} setShowModal={setIsOpen} />
 
       <AnimatePresence exitBeforeEnter>
         <Switch location={location} key={location.key}>
@@ -53,8 +57,6 @@ function App() {
             <Home />
           </Route>
         </Switch>
-
-        <Modal showModal={isOpen} setShowModal={setIsOpen} />
       </AnimatePresence>
     </>
   );
