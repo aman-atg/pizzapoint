@@ -16,6 +16,10 @@ const containerVariants = {
       when: "beforeChildren",
     },
   },
+  exit: {
+    x: "-100vw",
+    transition: { ease: "easeInOut" },
+  },
 };
 
 const childrenVariants = {
@@ -32,6 +36,7 @@ const Order = ({ pizza }) => {
       variants={containerVariants}
       initial="hidden"
       animate="visible"
+      exit="exit"
       className="container order"
     >
       <h2>Thank you for your order :)</h2>
