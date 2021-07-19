@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Route, Switch, useLocation } from "react-router-dom";
 import Header from "./components/Header";
 import Home from "./components/Home";
@@ -6,9 +6,11 @@ import Base from "./components/Base";
 import Toppings from "./components/Toppings";
 import Order from "./components/Order";
 import { AnimatePresence } from "framer-motion";
+import Modal from "./components/Modal";
 
 function App() {
   const [pizza, setPizza] = useState({ base: "", toppings: [] });
+  const [isOpen, setIsOpen] = useState(false);
 
   const addBase = (base) => {
     setPizza({ ...pizza, base });
@@ -25,6 +27,12 @@ function App() {
   };
 
   const location = useLocation();
+
+  useEffect(() => {
+    if (location.pathname === "/order") {
+      setTimeout(() => setIsOpen(true), 1000);
+    }
+  }, [location]);
 
   return (
     <>
@@ -45,6 +53,8 @@ function App() {
             <Home />
           </Route>
         </Switch>
+
+        <Modal showModal={isOpen} setShowModal={setIsOpen} />
       </AnimatePresence>
     </>
   );

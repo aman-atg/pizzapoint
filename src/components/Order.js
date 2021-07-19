@@ -30,6 +30,7 @@ const childrenVariants = {
     opacity: 1,
   },
 };
+
 const Order = ({ pizza }) => {
   return (
     <motion.div
