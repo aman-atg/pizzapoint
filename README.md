@@ -51,3 +51,8 @@ npm start
 ### License
 
 This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/aman-atg/pizzapoint/blob/master/LICENSE) file for details
+
+
+## Acknowledgments
+
+* [Net Ninja : Framer Motion Playlist](https://www.youtube.com/watch?v=2V1WK-3HQNk&list=PL4cUxeGkcC9iHDnQfTHEVVceOEBsOf07i)
